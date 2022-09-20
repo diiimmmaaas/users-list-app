@@ -1,0 +1,32 @@
+<div class="row justify-content-center align-items-center">
+  <div class="w-50 text-center border rounded my-5">
+    <div style="height: 50px" class="container d-flex p-0">
+      <a style="line-height: 50px" class="border rounded-top w-100" (click)="onFilter($event)">
+        income
+      </a>
+      <a style="line-height: 50px" class="border rounded-top w-100" (click)="onFilter($event)">
+        outcome
+      </a>
+      <a style="line-height: 50px" class="border rounded-top w-100" (click)="onFilter($event)">
+        loan
+      </a>
+      <a style="line-height: 50px" class="border rounded-top w-100" (click)="onFilter($event)">
+        investment
+      </a>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="font-weight: bold" scope="col">Name</th>
+          <th style="font-weight: bold" scope="col">Account</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let userData of userDataList.data">
+        <tr *ngIf="userData.type === filter">
+          <td>{{ userData.name.first }}</td>
+          <td>{{ userData.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
