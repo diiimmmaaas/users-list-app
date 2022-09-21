@@ -1,27 +1,38 @@
-# AngularApp
+# Test app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+## Description:
 
-## Development server
+The “List” page is a tab set. Each tab has a simple table. It has 2 columns. First column is “Name”.
+Second column is number of "Phone". It’s rows are objects from the JSON, filtered by “type” property.
+The “Income” tab will display only those objects, which have “type” === “income”. Other 3 tabs have exactly same filtering logic.
+The URL of the page should be: /navigator?tab=<0..3>, where tab query parameter corresponds to a currently selected tab, and the type by which the table is filtered.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Stack:
 
-## Code scaffolding
+Angular, Bootstrap 4, Typescript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation:
 
-## Build
+After cloning the repository, install the dependencies with the command:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```javascript
+yarn
+```
 
-## Running unit tests
+or
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```javascript
+npm install
+```
 
-## Running end-to-end tests
+then run with the command:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```javascript
+yarn start
+```
 
-## Further help
+or
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```javascript
+npm start
+```
