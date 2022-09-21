@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserListService, UserDataList } from 'src/app/services/user-list.service';
+import { UserDataList, UserListService } from 'src/app/services/user-list.service';
+import { FilterValue, FilterValuesService } from 'src/app/services/filter-values.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-list-page',
@@ -12,12 +14,18 @@ export class UserListPageComponent implements OnInit {
     data: [],
   };
 
+  filterValues: FilterValue[] = [];
+
   filter = 'income';
 
-  constructor(private appService: UserListService) {}
+  constructor(
+    private userService: UserListService,
+    private filterValuesService: FilterValuesService
+  ) {}
 
   ngOnInit(): void {
-    this.userDataList = this.appService.getUserList();
+    this.userDataList = this.userService.getUserList();
+    this.filterValues = this.filterValuesService.getFilterValues();
   }
 
   onFilter(event: MouseEvent): void {

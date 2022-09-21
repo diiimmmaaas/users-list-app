@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 export interface UserData {
   _id: string;
   amount: string;
-  type: 'outcome' | 'loan' | 'income' | 'investment';
+  type: DealType;
   name: {
     first: string;
     last: string;
@@ -19,6 +19,8 @@ export interface UserDataList {
   total: number;
   data: UserData[];
 }
+
+export type DealType = 'outcome' | 'loan' | 'income' | 'investment';
 
 @Injectable({
   providedIn: 'root',

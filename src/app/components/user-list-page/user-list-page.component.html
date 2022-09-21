@@ -1,24 +1,28 @@
 <div class="row justify-content-center align-items-center">
   <div class="w-50 text-center border rounded my-5">
-    <div style="height: 50px" class="container d-flex p-0">
-      <a style="line-height: 50px" class="border rounded-top w-100" (click)="onFilter($event)">
-        income
-      </a>
-      <a style="line-height: 50px" class="border rounded-top w-100" (click)="onFilter($event)">
-        outcome
-      </a>
-      <a style="line-height: 50px" class="border rounded-top w-100" (click)="onFilter($event)">
-        loan
-      </a>
-      <a style="line-height: 50px" class="border rounded-top w-100" (click)="onFilter($event)">
-        investment
-      </a>
+    <div class="d-flex">
+      <div
+        *ngFor="let filterValue of filterValues"
+        style="height: 50px"
+        class="container d-flex p-0"
+      >
+        <a
+          [routerLink]="['/navigator/']"
+          [queryParams]="{ type: filterValue.id }"
+          routerLinkActive="activeButton"
+          style="line-height: 50px"
+          class="border rounded-top w-100"
+          (click)="onFilter($event)"
+        >
+          {{ filterValue.value }}
+        </a>
+      </div>
     </div>
     <table class="table">
       <thead>
         <tr>
           <th style="font-weight: bold" scope="col">Name</th>
-          <th style="font-weight: bold" scope="col">Account</th>
+          <th style="font-weight: bold" scope="col">Phone</th>
         </tr>
       </thead>
       <tbody *ngFor="let userData of userDataList.data">

@@ -1,6 +1,13 @@
 <div class="row justify-content-center align-items-center h-100">
-  <div class="w-50 text-center border rounded my-5">
-    <div>Welcome, please Click button for start app</div>
-    <button>Start</button>
+  <div class="w-50 text-center border rounded my-5 p-5">
+    <div>
+      <p style="font-size: 20px">Welcome,</p>
+      <p style="font-size: 14px">please press the button to start the application</p>
+    </div>
+    <button type="button" class="btn btn-success">
+      <a style="color: #ffffff" [routerLink]="['/navigator']" [queryParams]="{ type: '0' }"
+        >Start
+      </a>
+    </button>
   </div>
 </div>
