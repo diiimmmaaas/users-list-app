@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { DealType } from 'src/app/services/user-list.service';
-
-export interface FilterValue {
-  id: string;
-  value: DealType;
-}
+import { FilterValue } from 'src/app/user-list/models/filter-values.model';
 
 @Injectable({
   providedIn: 'root',

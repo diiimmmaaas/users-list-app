@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataList, UserListService } from 'src/app/services/user-list.service';
-import { FilterValue, FilterValuesService } from 'src/app/services/filter-values.service';
-import { ActivatedRoute } from '@angular/router';
+import { UserListService } from 'src/app/user-list/services/user-list.service';
+import { FilterValuesService } from 'src/app/user-list/services/filter-values.service';
+import { UserDataList } from 'src/app/user-list/models/user-list.model';
+import { FilterValue } from 'src/app/user-list/models/filter-values.model';
 
 @Component({
   selector: 'app-user-list-page',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserListPageComponent implements OnInit {
   userDataList: UserDataList = {
-    total: 0,
+    total: null,
     data: [],
   };
 

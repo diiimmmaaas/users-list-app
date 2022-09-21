@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserListPageComponent } from './components/user-list-page/user-list-page.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { PageNotFoundComponent } from 'src/app/components/page-not-found-component/page-not-found.component';
+import { HomeModule } from 'src/app/home/home.module';
+import { PageNotFoundModule } from 'src/app/page-not-found/page-not-found.module';
+import { UserListModule } from 'src/app/user-list/user-list.module';
 
 @NgModule({
-  declarations: [AppComponent, UserListPageComponent, HomePageComponent, PageNotFoundComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, HomeModule, PageNotFoundModule, UserListModule],
   providers: [],
   bootstrap: [AppComponent],
 })
